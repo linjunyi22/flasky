@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Home -- {{title}}</title>
+	<style>
+/*		div{
+			width: 50%;
+			height: 100%;
+			color: #123548;
+			background-color: #890966;
+			margin: auto;
+
+		}*/
+	</style>
+</head>
+<body>
+<!-- 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo asperiores suscipit impedit laborum ab. Cumque sequi molestias nam, sed vel adipisci est quasi tempora laudantium veritatis necessitatibus pariatur eligendi. Totam.</p> -->
+    <div>Microblog: <a href="{{ url_for('home') }}">Home</a></div>
+    <hr>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+    {% for message in messages %}
+        <li>{{ message }} </li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+
+</body>
+</html>
