@@ -29,6 +29,9 @@ class Data(Resource):
 		}
 		return jsonify(data)
 
+	def post(self):
+		pass
+
 api.add_resource(Data,'/')
 
 
